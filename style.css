@@ -61,20 +61,35 @@ header{
     width: 100%;
     height: 100vh;
     padding: 2em;
+    position: relative;
+    
 }
 
 nav{
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
+    justify-content: space-around;
+    position: fixed;
+    top: 0;
+    left: auto;
+    right: auto;
+    width: 100%;
+    padding-top: .5em;
+    padding-bottom: .5em;
 }
 
 .logo{
     font-size:1.2rem;
     font-weight: 900;
+}
+
+.toggle{
+    display: none;
+    text-transform: uppercase;
+    font-size: .78rem;
+    font-weight: 700;
+    color: var(--titleColor);
+    cursor: pointer;
 }
 
 ul.menu{
@@ -159,12 +174,19 @@ p.offer{
     margin-right: auto;
 }
 
+.grid-container{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    gap: 0;
+}
+
 .row{
     display: flex;
+    width: 100%;
     align-items: stretch;
-    gap: 0;
-    width: 100%; 
 }
+
 
 .row:nth-child(even){
     flex-direction: row-reverse;
@@ -172,8 +194,6 @@ p.offer{
 
 .col{
     width: 100%;
-    display: flex;
-
 }
 
 .col+.col{ 
@@ -181,9 +201,18 @@ p.offer{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 3em;
     background: var(--bodyWhite);
 }
+
+img{
+    width: 100%;
+    height: 100%;
+}
+
+/* 
+
+
+
 
 picture{
     width: 100%;
@@ -193,10 +222,31 @@ picture{
 
 picture img{
     width: 100%;
+} */
+
+.contact .col{
+    background-color: var(--bodyWhite); 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 2em;
 }
 
 
 @media screen and (max-width: 760px){
+
+    ul.menu{
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        width: 100%;
+        background: var(--bodyWhite);
+        
+    }
+    .sub-container{
+        width: 90%;
+    }
     p{
         font-size: .78rem;
     }
