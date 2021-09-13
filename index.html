@@ -13,9 +13,14 @@
 <body>
     <main class="container">
         <header>
-            <nav>
+			
+            <video src="./images/Touch lamp.mp4" muted loop autoplay></video>
+
+            <div class="overlay"></div>
+
+            <nav class="nav">
                 <div class="logo"><a href="#">dreamland</a></div>
-                <div class="toggle">menu</div>
+                <button class="toggle" onclick="menuOpen()">menu</button>
                 <ul class="menu">
                     <li class="items"><a href="#" class="links">Home</a></li>
                     <li class="items"><a href="#" class="links">About Us</a></li>
@@ -25,7 +30,8 @@
                 </ul>
             </nav>
             <section class="banner sub-container">
-                <h1 class="title">Dreamland Smart Homes</h1>
+				<h2 class="title">build your home </h2>
+                <h1 class="title">we make it intelligent</h1>
                 <p class="content">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum quos perspiciatis ab, repudiandae asperiores corrupti fugit quisquam. Adipisci iusto perspiciatis exercitationem velit suscipit magnam tenetur laborum expedita modi pariatur. Aperiam voluptates ipsa delectus dolorem qui incidunt a omnis assumenda officia quo totam quia perferendis, voluptas recusandae repudiandae fugiat accusamus in!</p>
                 <div class="btn-group">
                     <button class="btn qoute">Get Qoute</button>
@@ -43,9 +49,7 @@
             <div class="grid-container">
                 <div class="row one">
                     <div class="col">
-                        <picture>
-                            <img src="./images/Dome Camera.png" alt="Close Circuit Security Cameras">
-                        </picture>
+                            <img src="./images/dome.jpg" alt="Close Circuit Security Cameras">
                     </div>
                     <div class="col">
                         <h3 class="title">CCTV Installations</h3>
@@ -53,38 +57,32 @@
                         <button class="btn explore">Explore</button>
                     </div>
                 </div>
-
                 <div class="row two">
                     <div class="col">
                             <img src="./images/Desktop - 1.jpg" alt="Wired and Wireless Networking">
                     </div>
                     <div class="col">
                         <h3 class="title">Wired and Wireless Networking</h3>
-                        <p class="content">We Install Wired and wireless Networks in homes, offices and other public places. We sell quality Network Equipments from trusted brands like CISCO, Huawei, ZTE, Dlink e.t.c.</p>
+                        <p class="content">We Install Wired and wireless Networks in homes, offices and other public places. We sell quality Network Equipments from trusted brands like CISCO, Huawei, ZTE, Dlink e.t.c. We also offer routine maintenance and upgrade of existing networks</p>
                         <button class="btn explore">Explore</button>
                     </div>
-                    
                 </div>
 
                 <div class="row three">
                     <div class="col">
-                        <picture>
-                            <img src="./images/Google Nest.png" alt="Google Nest Smart Assistants">
-                        </picture>
+                            <img src="./images/googlehome.jpg" alt="Google Nest Smart Assistants">
                     </div>
                     
                     <div class="col">
                         <h3 class="title">Android and Ipad Home Control</h3>
-                        <p class="content">We sell and setup smart home appliances. These includes voice control systems, ipad and android controlled home appliances.+</p>
+                        <p class="content">We sell and setup smart home appliances. These includes voice control systems, ipad and android controlled home appliances. We offer controls for Lighting, Air conditioners, Televisions, Smart Speakers, Curtains, Doors and Cloud Backup.</p>
                         <button class="btn explore">Explore</button>
                     </div>
                 </div>
 
                 <div class="row four">
                     <div class="col">
-                        <picture>
-                            <img src="./images/Enclave Sound System.png" alt="Surround Sound Systems">
-                        </picture>
+                            <img src="./images/Soundsystem.jpg" alt="Surround Sound Systems">
                     </div>
                     <div class="col">
                         <h3 class="title">Sound System Installations</h3>
@@ -126,7 +124,7 @@
                             <span>whatsApp</span>
                         </p>
                     </div>
-                    <div class="col">
+                    <div class="col post-col">
                         <form action="" method="post">
                             <h3 class="title">Get A Quote</h3>
 
@@ -158,5 +156,6 @@
 
         </footer>
     </main>
+    <script src="./js/navbar.js"></script>
 </body>
 </html>

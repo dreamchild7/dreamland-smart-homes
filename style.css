@@ -27,20 +27,24 @@ p{
     color: var(--bodyColor);
     max-width: 60ch;
     padding-bottom: 1em ;
+    letter-spacing: 1px;
 }
 
 h1,h2,h3,h4,h5,h6{
     font-weight: 700;
     color: var(--titleColor);
+    text-transform: uppercase;
 }
 
 h1.title{
-    font-size: 5vw;
+    font-size: 5em;
+    line-height: 1em;
+    text-transform: uppercase;
     padding-bottom: .2em ;
 }
 
 .title{
-    padding-bottom: .8em;
+    line-height: 1em;
 }
 
 ul{
@@ -60,9 +64,26 @@ a{
 header{
     width: 100%;
     height: 100vh;
-    padding: 2em;
-    position: relative;
-    
+    position: relative; 
+}
+
+header video{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+}
+
+.overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bodyColor);
+    mix-blend-mode: overlay;
 }
 
 nav{
@@ -76,6 +97,15 @@ nav{
     width: 100%;
     padding-top: .5em;
     padding-bottom: .5em;
+    z-index: 100;
+}
+
+.scroll-nav{
+    background-color: #ffffff;
+    transition: background-color 200ms linear;
+    box-shadow: 0 12.5px 10px rgba(0, 0, 0, 0.041),
+    0 100px 80px rgba(0, 0, 0, 0.07)
+;
 }
 
 .logo{
@@ -85,11 +115,15 @@ nav{
 
 .toggle{
     display: none;
+    background: none;
+    border: 0;
+    outline: 0;
     text-transform: uppercase;
     font-size: .78rem;
     font-weight: 700;
     color: var(--titleColor);
     cursor: pointer;
+    z-index: 100;
 }
 
 ul.menu{
@@ -103,6 +137,7 @@ section{
 }
 
 .sub-container{
+    position: relative;
     width: 80%;
     margin-left: auto;
     margin-right: auto;
@@ -113,17 +148,20 @@ section{
 /* Banner */
 
 .banner{
+    position: absolute;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    text-align: center;
+    align-items: flex-start;
+    padding-left: 6em;
     height: 100vh;
+    z-index: 10;
 
 }
 
 .banner p{
-    font-size: 1.5rem;
+    font-size: 1.1rem;
+    color: var(--bodyWhite);
 }
 
 .btn-group{
@@ -164,8 +202,8 @@ button.btn{
 
 h2{
     text-transform: uppercase;
-    padding-bottom: 1em;
     text-align: center;
+    line-height: 1em;
 }
 
 p.offer{
@@ -177,7 +215,7 @@ p.offer{
 .grid-container{
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(4, 1fr);
+    grid-template-rows: repeat(4, auto);
     gap: 0;
 }
 
@@ -201,6 +239,9 @@ p.offer{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: .7em; 
+    padding: .8em;
+    text-align: center;
     background: var(--bodyWhite);
 }
 
@@ -209,20 +250,6 @@ img{
     height: 100%;
 }
 
-/* 
-
-
-
-
-picture{
-    width: 100%;
-    height: 100%;
-    
-}
-
-picture img{
-    width: 100%;
-} */
 
 .contact .col{
     background-color: var(--bodyWhite); 
@@ -233,22 +260,66 @@ picture img{
     padding: 2em;
 }
 
+.post-col{
+    border-left: 1em solid var(--btnColor);
+}
 
-@media screen and (max-width: 760px){
+
+@media screen and (max-width: 900px){
+
+    header{
+        padding: 0;
+    }
+
+    nav{
+    height: 4em;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1em;
+    }
+
+    .toggle{
+        display: block;
+    }
 
     ul.menu{
+        position: absolute;
+        display: none;
         flex-direction: column;
         align-items: flex-start;
         justify-content: center;
+        top: 0;
+        left: 0;
+        gap: 1em;
+        padding-left: 2em;
         width: 100%;
+        height: 100vh;
         background: var(--bodyWhite);
+        overflow-x: hidden;
+        transition: 0.5s;
+        z-index: 10;
         
     }
+    /* .menu-open{
+        transform: translate(-100%, -100%);
+        transition: transform 0.3s ease-in;
+    } */
     .sub-container{
         width: 90%;
     }
     p{
         font-size: .78rem;
+    }
+
+    h1.title{
+        font-size: 3em;
+        line-height: 1em;
+        text-transform: uppercase;
+        padding-bottom: .2em ;
+    }
+
+    .banner{
+        padding-left: 2em;
     }
 
     .banner p{
